@@ -1,3 +1,5 @@
+#generator: https://setupmc.com/java-server/
+
 ---
 services:
 #
@@ -25,14 +27,14 @@ services:
       ENTITY_BROADCAST_RANGE_PERCENTAGE: "150"
       SIMULATION_DISTANCE: "16"
       VIEW_DISTANCE: "16"
-      SEED: "seed"
+#      SEED: "seed"
       OPS: |-
         Fincher_
-       # AddyTheBaddie_
+#       AddyTheBaddie_
       ENABLE_WHITELIST: "true"
       WHITELIST: |-
         Fincher_
-       # AddyTheBaddie_
+#        AddyTheBaddie_
       #PLUGINS: |-
       #  https://blah.xyz/mc-home/pluginsgohere.jar
       RCON_CMDS_STARTUP: |-
@@ -43,7 +45,6 @@ services:
       LOG_TIMESTAMP: "true"
     ports:
       - "25565:25565"
-      #- 8443:8443
     volumes:
       - "${LOCVOL1}mc-home:/data"
     networks:
