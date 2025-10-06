@@ -3,7 +3,7 @@
 ---
 services:
 #
-  ${MC_SVCNAME}:
+  mc:
     image: itzg/minecraft-server:latest
     tty: true
     stdin_open: true
