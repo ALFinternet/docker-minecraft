@@ -19,7 +19,7 @@ services:
       VERSION: "1.21.9"
       PAPER_CHANNEL: "experimental"
       MEMORY: "4096M"
-      MOTD: "Finch Home Minecraft Server"
+      MOTD: "Finch Home Minecraft Server" # use \n for new line
       USE_AIKAR_FLAGS: "true"
       USE_MEOWICE_FLAGS: "true"
       PVP: "false"
@@ -28,12 +28,11 @@ services:
       SIMULATION_DISTANCE: "16"
       VIEW_DISTANCE: "16"
 #      SEED: "seed"
-      OPS: |-
-        Fincher_
-#       AddyTheBaddie_
+      OPS: "${MC_OPS}"
       ENABLE_WHITELIST: "true"
-      WHITELIST: |-
-        Fincher_
+      WHITELIST: "${MC_WHITELIST}"
+#      WHITELIST: |-
+#        Fincher_
 #        AddyTheBaddie_
       #PLUGINS: |-
       #  https://blah.xyz/mc-home/pluginsgohere.jar
