@@ -1,0 +1,57 @@
+---
+services:
+#
+  mc-home:
+    image: itzg/minecraft-server:latest
+    tty: true
+    stdin_open: true
+    container_name: mc-home
+    environment:
+      PUID: "${PUID}"
+      PGID: "${PGID}"
+      UID: "${PUID}"
+      GID: "${PGID}"
+      TZ: "${TZ}"
+      EULA: "TRUE"
+      TYPE: "PAPER"
+      VERSION: "1.21.9"
+      PAPER_CHANNEL: "experimental"
+      MEMORY: "4096M"
+      MOTD: "Finch Home Minecraft Server"
+      USE_AIKAR_FLAGS: "true"
+      USE_MEOWICE_FLAGS: "true"
+      PVP: "false"
+      FORCE_GAMEMODE: "true"
+      ENTITY_BROADCAST_RANGE_PERCENTAGE: "150"
+      SIMULATION_DISTANCE: "16"
+      VIEW_DISTANCE: "16"
+      SEED: "seed"
+      OPS: |-
+        Fincher_
+       # AddyTheBaddie_
+      ENABLE_WHITELIST: "true"
+      WHITELIST: |-
+        Fincher_
+       # AddyTheBaddie_
+      #PLUGINS: |-
+      #  https://blah.xyz/mc-home/pluginsgohere.jar
+      RCON_CMDS_STARTUP: |-
+        //gamerule keepinventory true
+      PAUSE_WHEN_EMPTY_SECONDS: "300"
+      ALLOW_FLIGHT: "true"
+      ENABLE_ROLLING_LOGS: "true"
+      LOG_TIMESTAMP: "true"
+    ports:
+      - "25565:25565"
+      #- 8443:8443
+    volumes:
+      - "${LOCVOL1}mc-home:/data"
+    networks:
+      default:
+    restart: unless-stopped
+#
+#
+networks:
+  default:
+    name: ${CONNET}
+    external: true
