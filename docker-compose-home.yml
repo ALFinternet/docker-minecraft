@@ -22,22 +22,18 @@ services:
       MOTD: "${MC_MOTD}" # use \n for new line
       USE_AIKAR_FLAGS: "true"
       USE_MEOWICE_FLAGS: "true"
-      PVP: "false"
+      PVP: "${MC_PVP}"
       FORCE_GAMEMODE: "true"
       ENTITY_BROADCAST_RANGE_PERCENTAGE: "${MC_BROADCASTRANGE}"
       SIMULATION_DISTANCE: "${MC_SIMDIST}"
       VIEW_DISTANCE: "${MC_VIEWDIST}"
-#      SEED: "seed"
+      SEED: "${MC_SEED}"
       OPS: "${MC_OPS}"
-      ENABLE_WHITELIST: "true"
+      ENABLE_WHITELIST: "${MC_WHITELIST}"
       WHITELIST: "${MC_WHITELIST}"
-#      WHITELIST: |-
-#        Fincher_
-#        AddyTheBaddie_
+      PLUGINS: "${MC_PLUGINS}"
       #PLUGINS: |-
       #  https://blah.xyz/mc-home/pluginsgohere.jar
-      #RCON_CMDS_STARTUP: |-
-      #  gamerule keepinventory true
       RCON_CMDS_STARTUP: "${MC_RCON_CMDS_STARTUP}"
       PAUSE_WHEN_EMPTY_SECONDS: "300"
       ALLOW_FLIGHT: "true"
