@@ -3,11 +3,11 @@
 ---
 services:
 #
-  mc-home:
+  ${MC_SVCNAME}:
     image: itzg/minecraft-server:latest
     tty: true
     stdin_open: true
-    container_name: mc-home
+    container_name: "${MC_SVCNAME}"
     environment:
       PUID: "${PUID}"
       PGID: "${PGID}"
@@ -16,17 +16,17 @@ services:
       TZ: "${TZ}"
       EULA: "TRUE"
       TYPE: "PAPER"
-      VERSION: "1.21.9"
-      PAPER_CHANNEL: "experimental"
-      MEMORY: "4096M"
-      MOTD: "Finch Home Minecraft Server" # use \n for new line
+      VERSION: "${MC_VERSION}"
+      PAPER_CHANNEL: "${MC_PAPER_CHAN}"
+      MEMORY: "${MC_MEMORY}"
+      MOTD: "${MC_MOTD}" # use \n for new line
       USE_AIKAR_FLAGS: "true"
       USE_MEOWICE_FLAGS: "true"
       PVP: "false"
       FORCE_GAMEMODE: "true"
-      ENTITY_BROADCAST_RANGE_PERCENTAGE: "150"
-      SIMULATION_DISTANCE: "16"
-      VIEW_DISTANCE: "16"
+      ENTITY_BROADCAST_RANGE_PERCENTAGE: "${MC_BROADCASTRANGE}"
+      SIMULATION_DISTANCE: "${MC_SIMDIST}"
+      VIEW_DISTANCE: "${MC_VIEWDIST}"
 #      SEED: "seed"
       OPS: "${MC_OPS}"
       ENABLE_WHITELIST: "true"
@@ -46,7 +46,7 @@ services:
     ports:
       - "25565:25565"
     volumes:
-      - "${LOCVOL1}mc-home:/data"
+      - "${LOCVOL1}${MC_SVCNAME}:/data"
     networks:
       default:
     restart: unless-stopped
