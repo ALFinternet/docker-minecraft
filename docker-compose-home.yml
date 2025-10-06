@@ -37,8 +37,9 @@ services:
 #        AddyTheBaddie_
       #PLUGINS: |-
       #  https://blah.xyz/mc-home/pluginsgohere.jar
-      RCON_CMDS_STARTUP: |-
-        //gamerule keepinventory true
+      #RCON_CMDS_STARTUP: |-
+      #  gamerule keepinventory true
+      RCON_CMDS_STARTUP: "${MC_RCON_CMDS_STARTUP}"
       PAUSE_WHEN_EMPTY_SECONDS: "300"
       ALLOW_FLIGHT: "true"
       ENABLE_ROLLING_LOGS: "true"
