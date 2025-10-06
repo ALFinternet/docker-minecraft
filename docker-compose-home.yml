@@ -46,6 +46,19 @@ services:
     networks:
       default:
     restart: unless-stopped
+    depends_on: [ "mc-web", ]
+#
+#
+  mc-web:
+    image: lscr.io/linuxserver/nginx:latest
+    container_name: "${MC_SVCNAME}-web"
+    environment:
+      PUID: "${PUID}"
+      PGID: "${PGID}"
+      TZ: "${TZ}"
+    volumes:
+      - "${LOCVOL1}${MC_SVCNAME}/web:/config"
+    restart: unless-stopped
 #
 #
 networks:
