@@ -1,4 +1,5 @@
-#generator: https://setupmc.com/java-server/
+# https://docker-minecraft-server.readthedocs.io/en/latest/
+# compose generator: https://setupmc.com/java-server/
 
 ---
 services:
